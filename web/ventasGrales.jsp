@@ -18,29 +18,27 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <title>Ventas Generales</title>
     </head>
-    <body>
-        <div class="container well">
-        <h1>Informacion de Ventas Generales</h1>
-        <form action="./VentasGralesServlet" method="POST">
-        <table>
+    <body background-color="#35AEA1">
+        <div class="container well" style="width: 90%; background-color: #35AEA1">
+            <h1 style="background-color:#90B2A4 "><center>Informacion de Ventas Generales</center></h1>
+        <form action="./VentasGralesServlet" method="POST" style="width: 100%;background-color: #afcad2;">
+        <table align="center">
             <tr>
-                <th> Codigo Venta </th>
+                <th><center> Codigo Venta</center> </th>
                 <th><input type="text" class="form-control" placeholder="codigo venta" required="true" name="codVenta" value="${ventasGrales.codVenta}"/> </th>
             </tr>
             <tr>
-                <th> Precio  </th>
+                <th><center> Precio </center> </th>
                  <th> <input type="text" name="precio" class="form-control" placeholder="precio" required="false" value="${ventasGrales.precio}"/></th>
             </tr>
              <tr>
-                <th> Codigo Vehiculo </th>
+                 <th><center> Codigo Vehiculo </center></th>
                  <th><input type="text" name="codVehiculo" class="form-control" placeholder="codigo vehiculo" required="false" value="${ventasGrales.codVehiculo}"/> </th>
             </tr>
             <tr>
-                <th> Cliente </th>
+                <th><center> Cliente </center></th>
                 <th><input type="text" name="cliente" class="form-control" placeholder="cc cliente" required="false" value="${ventasGrales.cliente}"/></th>
             </tr>
-            <div class="break"></div>                        
-                    </div>
             
             
              <tr>
@@ -65,15 +63,10 @@
             
         </table>
             </form>
-            <form action="./ventasGralesServlet">
-                <table border="1" class="table table-striped"
-                    <input class="btn btn-primary btn-block" type="submit" name="action" value="Vehiculo"/>
-                    <input class="btn btn-primary btn-block" type="submit" name="action" value="Cliente" />
-                </table>
-            </form>
+            
             <br>
             
-            <table border="1" class="table table-striped">
+            <table border="1" class="table table-striped" align="center">
                 <th scope="row">Codigo Venta</th>
                 <th>Precio</th>
                 <th>Codigo Vehiculo</th>
@@ -88,6 +81,16 @@
                     </tr>
                 </c:forEach>
            </table>
+            <form action="./vehiculo.jsp" style="width:100%">
+                <table border="1" class="table table-striped" align="center">
+                    <input class="btn btn-primary btn-block" type="submit" value="Vehiculo"/>
+                </table>
+            </form>
+            <form action="./cliente.jsp" style="width:100%">
+                <table border="1" class="table table-striped" align="center">
+                    <input class="btn btn-primary btn-block" type="submit" value="Cliente" />
+                </table>
+            </form>
     </div>
     </body>
 </html>

@@ -39,17 +39,6 @@ public class ClienteServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         Cliente cliente = null;
         String action = request.getParameter("action");
-        if("Vehiculo".equalsIgnoreCase(action)){
-            RequestDispatcher requestDispatcher;
-            requestDispatcher = request.getRequestDispatcher("http://localhost:8080/Lab1Arq/vehiculo.jsp");
-            requestDispatcher.forward(request, response);
-        }
-        else if("VentasGrales".equalsIgnoreCase(action)){
-            RequestDispatcher requestDispatcher;
-            requestDispatcher = request.getRequestDispatcher("http://localhost:8080/Lab1Arq/ventasGrales.jsp");
-            requestDispatcher.forward(request, response);
-        }
-        else{
         String ClienteCc= request.getParameter("ClienteCc");
         String ClienteNombre = request.getParameter("ClienteNombre");
         String ClienteApellido = request.getParameter("ClienteApellido");
@@ -74,7 +63,6 @@ public class ClienteServlet extends HttpServlet {
         request.setAttribute("Cliente",cliente);
         request.setAttribute("allClientes",clienteDAO.getAllClientes());
         request.getRequestDispatcher("cliente.jsp").forward(request,response);
-    }
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -43,18 +43,6 @@ public class VehiculoServlet extends HttpServlet {
         Vehiculo vehiculo = null;
         float VehiculoPrecio=0;
         String action = request.getParameter("action");
-        if("Cliente".equalsIgnoreCase(action)){
-            RequestDispatcher requestDispatcher;
-            requestDispatcher = request.getRequestDispatcher("/cliente.jsp");
-            requestDispatcher.forward(request, response);
-            
-        }
-        else if("VentasGrales".equalsIgnoreCase(action)){
-            RequestDispatcher requestDispatcher;
-            requestDispatcher = request.getRequestDispatcher("/ventasGrales.jsp");
-            requestDispatcher.forward(request, response);
-        }
-        else{
         String VehiculoCod= request.getParameter("VehiculoCod");
         String PrecioStr = request.getParameter("vehiculoPrecio");
         VehiculoPrecio = Float.parseFloat(PrecioStr);
@@ -79,7 +67,6 @@ public class VehiculoServlet extends HttpServlet {
         request.setAttribute("Vehiculo",vehiculo);
         request.setAttribute("allVehiculos",vehiculoDAO.getAllVehiculos());
         request.getRequestDispatcher("vehiculo.jsp").forward(request,response);
-    }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -40,17 +40,6 @@ public class VentasGralesServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         VentasGrales ventasGrales = null;
         String action = request.getParameter("action");
-        if("Cliente".equalsIgnoreCase(action)){
-            RequestDispatcher requestDispatcher;
-            requestDispatcher = request.getRequestDispatcher("/cliente.jsp");
-            requestDispatcher.forward(request, response);
-        }
-        else if("VentasGrales".equalsIgnoreCase(action)){
-            RequestDispatcher requestDispatcher;
-            requestDispatcher = request.getRequestDispatcher("/vehiculo.jsp");
-            requestDispatcher.forward(request, response);
-        }
-        else{
         String codVenta = request.getParameter("codVenta");
         String cliente = request.getParameter("cliente");
         String codVehiculo = request.getParameter("codVehiculo");
@@ -74,7 +63,6 @@ public class VentasGralesServlet extends HttpServlet {
         request.setAttribute("allVentasGrales",ventasGralesDAO.getAllVentasGrales());
         request.getRequestDispatcher("ventasGrales.jsp").forward(request,response);
     }
-}
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
