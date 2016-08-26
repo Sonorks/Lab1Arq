@@ -36,16 +36,12 @@
                 <th> Precio </th>
                  <th><input type="text" name="vehiculoPrecio" class="form-control" placeholder="Precio de Vehiculo" required="true" value="${vehiculo.precio}"/> </th>
             </tr>
-            <div class="break"></div>                        
-                    </div>
-            
-            
+           
              <tr>
                  <td colspan="2">
                  <input class="btn icon-btn btn-success" type="submit" name="action" value="Add">
                  <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>
-           
-                 
+             
                  <input class="btn icon-btn btn-info" type="submit" name="action" value="Edit">
                  <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-info"></span>
                  
@@ -59,8 +55,9 @@
                  
                  </td>
              </tr>
-            
+               
         </table>
+            
             </form>
             <br>
             
@@ -68,7 +65,7 @@
                 <th scope="row">Codigo de Vehiculo</th>
                 <th>Marca de Vehiculo</th>
                 <th>Precio de Vehiculo</th>
-                                
+                                 
                 <c:forEach items="${allVehiculos}" var="vehiculo">
                     <tr>
                         <td>${vehiculo.cod}</td>
@@ -77,7 +74,13 @@
                     </tr>
                 </c:forEach>
            </table>
+            <form action="./VehiculoServlet">
+            <table border="1"class="table table-striped">
+                <input class="btn btn-primary btn-block" type="submit" name="action" value="Cliente"/>
+                <input class="btn btn-primary btn-block" type="submit" name="action" value="VentasGrales" />
+            </table>
+            </form>
     </div>
-
+    
     </body>
 </html>

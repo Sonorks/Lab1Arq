@@ -5,28 +5,26 @@
  */
 package controller;
 
-import dao.vehiculoDAOLocal;
+import dao.VentasGralesDAOLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.console;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Vehiculo;
+import modelo.VentasGrales;
 
 /**
  *
  * @author CASA555
  */
-@MultipartConfig(fileSizeThreshold=1024*1024*10,maxFileSize=1024*1024*50,maxRequestSize=1024*1024*100,location="/")
-public class VehiculoServlet extends HttpServlet {
+
+public class VentasGralesServlet extends HttpServlet {
 
     @EJB
-    private vehiculoDAOLocal vehiculoDAO;
+    private VentasGralesDAOLocal ventasGralesDAO;
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,48 +38,43 @@ public class VehiculoServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        Vehiculo vehiculo = null;
-        float VehiculoPrecio=0;
+        VentasGrales ventasGrales = null;
         String action = request.getParameter("action");
         if("Cliente".equalsIgnoreCase(action)){
             RequestDispatcher requestDispatcher;
             requestDispatcher = request.getRequestDispatcher("/cliente.jsp");
             requestDispatcher.forward(request, response);
-            
         }
         else if("VentasGrales".equalsIgnoreCase(action)){
             RequestDispatcher requestDispatcher;
-            requestDispatcher = request.getRequestDispatcher("/ventasGrales.jsp");
+            requestDispatcher = request.getRequestDispatcher("/vehiculo.jsp");
             requestDispatcher.forward(request, response);
         }
         else{
-        String VehiculoCod= request.getParameter("VehiculoCod");
-        String PrecioStr = request.getParameter("vehiculoPrecio");
-        VehiculoPrecio = Float.parseFloat(PrecioStr);
-        String VehiculoMarca = request.getParameter("vehiculoMarca");
-        System.out.println(VehiculoMarca);
-        System.out.println(VehiculoCod);
-        System.out.println(VehiculoPrecio);
-        vehiculo = new Vehiculo(VehiculoCod,VehiculoMarca,VehiculoPrecio);
+        String codVenta = request.getParameter("codVenta");
+        String cliente = request.getParameter("cliente");
+        String codVehiculo = request.getParameter("codVehiculo");
+        String precioStr = request.getParameter("precio");
+        float precio = Float.parseFloat(precioStr);
+        ventasGrales = new VentasGrales(codVenta,precio,codVehiculo,cliente);
         if("Add".equalsIgnoreCase(action)){
-            vehiculoDAO.addVehiculo(vehiculo);
+            ventasGralesDAO.addVentasGrales(ventasGrales);
         }
         else if("Edit".equalsIgnoreCase(action)){
-            vehiculoDAO.editVehiculo(vehiculo);
+            ventasGralesDAO.editVentasGrales(ventasGrales);
         }
         else if("Delete".equalsIgnoreCase(action)){
-            vehiculoDAO.deleteVehiculo(VehiculoCod);
+            ventasGralesDAO.deleteVentasGrales(codVenta);
         }
         else if("Search".equalsIgnoreCase(action)){
-            vehiculoDAO.getVehiculo(VehiculoCod);
+            ventasGralesDAO.getVentasGrales(codVenta);
         }
-        
-        request.setAttribute("Vehiculo",vehiculo);
-        request.setAttribute("allVehiculos",vehiculoDAO.getAllVehiculos());
-        request.getRequestDispatcher("vehiculo.jsp").forward(request,response);
+       
+        request.setAttribute("ventasGrales",ventasGrales);
+        request.setAttribute("allVentasGrales",ventasGralesDAO.getAllVentasGrales());
+        request.getRequestDispatcher("ventasGrales.jsp").forward(request,response);
     }
-    }
-
+}
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

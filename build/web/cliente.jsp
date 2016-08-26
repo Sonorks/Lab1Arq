@@ -67,7 +67,12 @@
         </table>
             </form>
             <br>
-            
+            <form action="./clienteServlet">
+                <table border="1" class="table table-striped"
+                    <input class="btn btn-primary btn-block" type="submit" name="action" value="Vehiculo" />
+                    <input class="btn btn-primary btn-block" type="submit" name="action" value="ventasGrales"/>
+                </table>
+            </form>
             <table border="1" class="table table-striped">
                 <th scope="row">CC de Cliente</th>
                 <th>Nombre de Cliente</th>
@@ -84,6 +89,6 @@
                 </c:forEach>
            </table>
     </div>
-
+   
     </body>
 </html>

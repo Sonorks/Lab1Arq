@@ -3,17 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/web/ventasGrales.jsp</file>
             <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/src/java/controller/ClienteServlet.java</file>
-            <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/src/java/modelo/Vehiculo.java</file>
-            <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/src/java/dao/vehiculoDAO.java</file>
-            <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/src/java/dao/clienteDAOLocal.java</file>
-            <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/src/java/dao/vehiculoDAOLocal.java</file>
+            <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/src/java/modelo/VentasGrales.java</file>
+            <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/src/java/dao/VentasGralesDAO.java</file>
             <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/src/java/dao/clienteDAO.java</file>
-            <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/web/cliente.jsp</file>
             <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/web/index.html</file>
-            <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/web/vehiculo.jsp</file>
+            <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/src/java/controller/VehiculoServlet.java</file>
+            <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/src/java/controller/VentasGralesServlet.java</file>
             <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/src/java/modelo/Cliente.java</file>
+            <file>file:/C:/Users/CASA555/Documents/NetBeansProjects/Lab1Arq/web/vehiculo.jsp</file>
         </group>
     </open-files>
 </project-private>

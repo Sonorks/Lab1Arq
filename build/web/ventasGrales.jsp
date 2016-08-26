@@ -1,11 +1,10 @@
 <%-- 
-    Document   : cliente
-    Created on : 21/08/2016, 12:36:34 PM
+    Document   : ventasGrales
+    Created on : 25/08/2016, 08:47:46 PM
     Author     : CASA555
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,28 +16,28 @@
  
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <title>Cliente</title>
+        <title>Ventas Generales</title>
     </head>
     <body>
         <div class="container well">
-        <h1>Informacion de Cliente</h1>
-        <form action="./ClienteServlet" method="POST">
+        <h1>Informacion de Ventas Generales</h1>
+        <form action="./VentasGralesServlet" method="POST">
         <table>
             <tr>
-                <th> CC Cliente </th>
-                <th><input type="text" class="form-control" placeholder="CC" required="true" name="ClienteCc" value="${cliente.cc}"/> </th>
+                <th> Codigo Venta </th>
+                <th><input type="text" class="form-control" placeholder="codigo venta" required="true" name="codVenta" value="${ventasGrales.codVenta}"/> </th>
             </tr>
             <tr>
-                <th> Nombre  </th>
-                 <th> <input type="text" name="ClienteNombre" class="form-control" placeholder="Nombre" required="false" value="${cliente.nombre}"/></th>
+                <th> Precio  </th>
+                 <th> <input type="text" name="precio" class="form-control" placeholder="precio" required="false" value="${ventasGrales.precio}"/></th>
             </tr>
              <tr>
-                <th> Apellido </th>
-                 <th><input type="text" name="ClienteApellido" class="form-control" placeholder="Apellido" required="false" value="${cliente.apellido}"/> </th>
+                <th> Codigo Vehiculo </th>
+                 <th><input type="text" name="codVehiculo" class="form-control" placeholder="codigo vehiculo" required="false" value="${ventasGrales.codVehiculo}"/> </th>
             </tr>
             <tr>
-                <th> Telefono </th>
-                <th><input type="text" name="ClienteTelefono" class="form-control" placeholder="#Telefono" required="false" value="${cliente.telefono}"/></th>
+                <th> Cliente </th>
+                <th><input type="text" name="cliente" class="form-control" placeholder="cc cliente" required="false" value="${ventasGrales.cliente}"/></th>
             </tr>
             <div class="break"></div>                        
                     </div>
@@ -66,29 +65,29 @@
             
         </table>
             </form>
-            <br>
-            <form action="./clienteServlet">
+            <form action="./ventasGralesServlet">
                 <table border="1" class="table table-striped"
-                    <input class="btn btn-primary btn-block" type="submit" name="action" value="Vehiculo" />
-                    <input class="btn btn-primary btn-block" type="submit" name="action" value="ventasGrales"/>
+                    <input class="btn btn-primary btn-block" type="submit" name="action" value="Vehiculo"/>
+                    <input class="btn btn-primary btn-block" type="submit" name="action" value="Cliente" />
                 </table>
             </form>
+            <br>
+            
             <table border="1" class="table table-striped">
-                <th scope="row">CC de Cliente</th>
-                <th>Nombre de Cliente</th>
-                <th>Apellido de Cliente</th>
-                <th>Telefono de Cliente</th>
+                <th scope="row">Codigo Venta</th>
+                <th>Precio</th>
+                <th>Codigo Vehiculo</th>
+                <th>Cliente</th>
                                 
-                <c:forEach items="${allClientes}" var="cliente">
+                <c:forEach items="${allVentasGrales}" var="ventasGrales">
                     <tr>
-                        <td>${cliente.cc}</td>
-                        <td>${cliente.nombre}</td>
-                        <td>${cliente.apellido}</td>
-                        <td>${cliente.telefono}</td>
+                        <td>${ventasGrales.codVenta}</td>
+                        <td>${ventasGrales.precio}</td>
+                        <td>${ventasGrales.codVehiculo}</td>
+                        <td>${ventasGrales.cliente}</td>
                     </tr>
                 </c:forEach>
            </table>
     </div>
-   
     </body>
 </html>

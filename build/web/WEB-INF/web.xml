@@ -8,6 +8,10 @@
         <servlet-name>ClienteServlet</servlet-name>
         <servlet-class>controller.ClienteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VentasGralesServlet</servlet-name>
+        <servlet-class>controller.VentasGralesServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>VehiculoServlet</servlet-name>
         <url-pattern>/VehiculoServlet</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>ClienteServlet</servlet-name>
         <url-pattern>/ClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VentasGralesServlet</servlet-name>
+        <url-pattern>/VentasGralesServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
